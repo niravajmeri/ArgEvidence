@@ -1,0 +1,40 @@
+<h3>Arguments</h3>
+
+<!-- <table>
+  <tr>
+    <th>Title</th>
+    <th>Description</th>
+    <th>User</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<%# @arguments.each do |argument| %>
+  <tr>
+    <td><%#= argument.title %></td>
+    <td><%#= argument.description %></td>
+    <td><%#= argument.user_id %></td>
+    <td><%#= link_to 'Show', argument %></td>
+    <td><%#= link_to 'Edit', edit_argument_path(argument) %></td>
+    <td><%#= link_to 'Destroy', argument, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<%# end %>
+</table>
+-->
+
+<div id="arguments">
+<% @arguments.each_with_index do |argument, index| %>
+  <div id="arg_<%=argument.id%>" style="border: 1px solid #C0C0C0; border-top-left-radius: 1em; padding-left: 10px; margin-top:3px; margin-bottom: 3px;">
+    <!--<p> -->
+      <b>Arg#<%=index+1%>. <%= argument.title %></b></br>
+      <%= argument.description %>
+      <%= argument.user.email %>, 
+      <%= link_to 'Detail', argument %> | 
+      Evidence (<%=argument.evidences.count%>) |
+      <%= link_to 'Edit', edit_argument_path(argument) %> |
+      <%= link_to 'Destroy', argument, method: :delete, data: { confirm: 'Are you sure?' } %>
+    <!-- </p> -->
+  </div>
+<% end %>
+</div>

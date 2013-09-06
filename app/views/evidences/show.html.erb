@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Title:</b>
+  <%= @evidence.title %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @evidence.description %>
+</p>
+
+<p>
+  <b>Mass value:</b>
+  <%= @evidence.mass_value %>
+</p>
+
+<p>
+  <b>User:</b>
+  <%= @evidence.user_id %>
+</p>
+
+<p>
+  <b>Argument:</b>
+  <ul>
+  <% @evidence.arguments.each do|argument| %>
+	<li><%= argument.title%></li>
+  <% end%>
+  </ul>
+</p>
+
+
+<%= link_to 'Edit', edit_evidence_path(@evidence) %> |
+<%= link_to 'Back', evidences_path %>

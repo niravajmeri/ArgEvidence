@@ -1,0 +1,21 @@
+<h2>Associate Evidence</h2>
+
+<% if @evidences.size > 0 %>
+
+<% @evidences.each_with_index do |evidence, index| %>
+  <div id="evidence_<%=evidence.id%>" style="border: 1px solid #C0C0C0; border-top-left-radius: 2em; padding-left: 10px; margin-top:3px;">
+
+      <b>Evidence#<%=index+1%>. <%= evidence.title %></b></br>
+      <%= evidence.description %>
+      <%= evidence.user.email %>, 
+      <%= link_to 'Detail', evidence %> | 
+      <%= link_to 'Edit', edit_evidence_path(evidence) %> |
+      <%= link_to 'Destroy', evidence, method: :delete, data: { confirm: 'Are you sure?' } %>
+
+  </div>
+
+<% end %>
+
+<% else %>
+  <div class="no-association"> No evidence to associate. </div>
+<% end%>

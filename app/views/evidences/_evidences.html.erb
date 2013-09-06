@@ -1,0 +1,44 @@
+<h3>Evidences</h3>
+
+<!--<table>
+  <tr>
+    <th>Title</th>
+    <th>Description</th>
+    <th>Mass value</th>
+    <th>User</th>
+    <th>Argument</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<%# @evidences.each do |evidence| %>
+  <tr>
+    <td><%#= evidence.title %></td>
+    <td><%#= evidence.description %></td>
+    <td><%#= evidence.mass_value %></td>
+    <td><%#= evidence.user_id %></td>
+    <td><%#= evidence.argument_id %></td>
+    <td><%#= link_to 'Show', evidence %></td>
+    <td><%#= link_to 'Edit', edit_evidence_path(evidence) %></td>
+    <td><%#= link_to 'Destroy', evidence, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% #end %>
+</table>
+-->
+
+<div id="evidences">
+<% @evidences.each_with_index do |evidence, index| %>
+  <div id="arg_<%=evidence.id%>" style="border: 1px solid #C0C0C0; border-top-left-radius: 1em; padding-left: 10px; margin-top:3px; margin-bottom: 3px;">
+    <!--<p> -->
+      <b>Evidence#<%=index+1%>. <%= evidence.title %></b></br>
+      <%= evidence.description %>
+      <%= evidence.user.email %>, 
+      <%= link_to 'Detail', evidence %> | 
+      Evidence (<%=evidence.arguments.count%>) |
+      <%= link_to 'Edit', edit_evidence_path(evidence) %> |
+      <%= link_to 'Destroy', evidence, method: :delete, data: { confirm: 'Are you sure?' } %>
+    <!-- </p> -->
+  </div>
+<% end %>
+</div>

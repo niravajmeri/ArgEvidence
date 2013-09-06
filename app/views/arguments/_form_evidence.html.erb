@@ -1,0 +1,40 @@
+<%= form_for(@evidence) do |f| %>
+  <% if @evidence.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@evidence.errors.count, "error") %> prohibited this evidence from being saved:</h2>
+
+      <ul>
+      <% @evidence.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <table>
+    <tr>
+      <td><%= f.label :title %></td>
+      <td><%= f.text_field :title %></td>
+    </tr>
+    <tr>
+      <td><%= f.label :description %></td>
+      <td><%= f.text_area :description, :rows => "3" %></td>
+    </tr>
+    <tr>
+      <td><%= f.label :mass_value %></td>
+      <td><%= f.number_field :mass_value %></td>
+    </tr>
+
+    <!--<div class="field">
+      <%#= f.label :user_id %><br />
+      <%#= f.number_field :user_id %>
+    </div>
+    <div class="field">
+      <%#= f.label :argument_id %><br />
+      <%#= f.number_field :argument_id %>
+    </div>-->
+    <tr>
+      <td colspan="2"><%= f.submit %></td>
+    </tr>
+  </table>
+<% end %>

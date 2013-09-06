@@ -1,0 +1,25 @@
+<!--<p id="notice"><%#= notice %></p>-->
+
+<div id="nav"><%= link_to 'List of Arguments', arguments_path %> > Arg# <%=@argument.title%> </div>
+
+<div id="arg_<%=@argument.id%>" style="border: 1px solid #C0C0C0; border-top-left-radius: 2em; padding-left: 10px; margin-top:3px;">
+    <p>
+      <b>Arg# <%= @argument.title %></b></br>
+      <%= @argument.description %>
+      <%= @argument.user.email %>, 
+      Evidence (<%=@argument.evidences.count%>)
+    </p>
+  </div>
+
+<%= render 'evidences' %>
+
+<hr />
+
+<div id="new_evidence" style="background-color: #DDDDDD; padding: 3px;">
+  <span style="font-weight:bold;">New evidence</span>
+  <%= render 'form_evidence' %>
+</div>
+
+
+<%#= link_to 'Edit', edit_argument_path(@argument) %>
+<%#= link_to 'Back', arguments_path %>

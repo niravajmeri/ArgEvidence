@@ -1,0 +1,42 @@
+<%= form_for(@evidence) do |f| %>
+  <% if @evidence.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@evidence.errors.count, "error") %> prohibited this evidence from being saved:</h2>
+
+      <ul>
+      <% @evidence.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :title %><br />
+    <%= f.text_field :title %>
+  </div>
+  <div class="field">
+    <%= f.label :description %><br />
+    <%= f.text_area :description, :rows => 3, :cols => 80 %>
+  </div>
+  <div class="field">
+    <%= f.label :mass_value %><br />
+    <%= f.number_field :mass_value %>
+  </div>
+<!--  <div class="field">
+    <%#= f.label :user_id %><br />
+    <%#= f.number_field :user_id %>
+  </div>
+-->
+  <div class="field">
+	<%= f.label :arguments %><br/>
+			 	<% Argument.all.each do |argument| %>
+					<label class="li"><%= check_box_tag :argument_ids, argument.id, @evidence.arguments.include?(argument), :name => 'evidence[argument_ids][]' %>
+					<%= argument.title %></label><br />
+				<% end %>
+
+
+  <div class="actions">
+    <%= f.submit %> or <%= link_to 'Cancel', evidences_path %>
+  </div>
+<% end %>
