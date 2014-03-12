@@ -1,4 +1,13 @@
 Testapp::Application.routes.draw do
+  resources :claims
+
+
+  resources :inference_rules
+
+
+  resources :facts
+
+
   get "sessions/new"
 
   resources :visualize

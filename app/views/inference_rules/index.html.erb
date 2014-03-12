@@ -1,0 +1,23 @@
+<h1>Listing inference_rules</h1>
+
+<table>
+  <tr>
+    <th>Description</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @inference_rules.each do |inference_rule| %>
+  <tr>
+    <td><%= inference_rule.description %></td>
+    <td><%= link_to 'Show', inference_rule %></td>
+    <td><%= link_to 'Edit', edit_inference_rule_path(inference_rule) %></td>
+    <td><%= link_to 'Destroy', inference_rule, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Inference rule', new_inference_rule_path %>
