@@ -1,4 +1,24 @@
 Testapp::Application.routes.draw do
+
+  get "projects_by_user" => "projects#projects_by_user", :as => "projects_by_user"
+  resources :critical_questions
+
+
+  resources :premise_types
+
+
+  resources :scheme_conclusions
+
+
+  resources :premises
+
+
+  resources :schemes
+
+
+  resources :projects
+
+
   resources :claims
 
 

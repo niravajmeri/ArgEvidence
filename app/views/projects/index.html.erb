@@ -1,0 +1,52 @@
+<!--<h1>Listing projects</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Description</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @projects.each do |project| %>
+  <tr>
+    <td><%= project.name %></td>
+    <td><%= project.description %></td>
+    <td><%= link_to 'Show', project %></td>
+    <td><%= link_to 'Edit', edit_project_path(project) %></td>
+    <td><%= link_to 'Destroy', project, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+-->
+
+
+<h2 class="sub-header">Your Projects <span style="font-size:10pt; font-weight:normal"><%= link_to 'New Project', new_project_path %></span>
+</h2>
+          <div class="table-responsive">
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th>#</th>
+                  <th>Project Name</th>
+                  <th>Description</th>
+                  <th></th>
+                  <th></th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody>
+                <% @projects.each_with_index do |project,index| %>
+                  <tr>
+                    <td><%= index+1 %></td>
+                    <td><%= project.name %></td>
+                    <td><%= project.description %></td>
+                    <td><%= link_to 'Show', project %></td>
+                    <td><%= link_to 'Edit', edit_project_path(project) %></td>
+                    <td><%= link_to 'Destroy', project, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+                  </tr>
+                <% end %>
+              </tbody>
+            </table>
+          </div>

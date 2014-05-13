@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Scheme:</b>
+  <%= @critical_question.scheme_id %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @critical_question.description %>
+</p>
+
+
+<%= link_to 'Edit', edit_critical_question_path(@critical_question) %> |
+<%= link_to 'Back', critical_questions_path %>

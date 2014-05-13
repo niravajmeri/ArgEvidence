@@ -19,6 +19,8 @@ end
 
 def destroy
   session[:user_id] = nil
+  session[:current_controller] = nil
+  session[:current_project] = nil
   redirect_to root_url, :notice => "Logged out!"
 end
   

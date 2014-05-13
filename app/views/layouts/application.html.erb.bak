@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Arg Evidence</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<div id="wrapper">
+<div id="header">
+<div id="user-nav">
+
+
+	<div style="width: 40%; text-align: right; float: right;">
+	  <% if current_user %>
+		Logged in as <%= current_user.email %>.
+		<%= link_to "Log out", log_out_path %>
+	  <% else %>
+		<%= link_to "Sign up", sign_up_path %> or
+		<%= link_to "log in", log_in_path %>
+	  <% end %>
+	</div>
+</div>
+
+<div id="banner">
+  <h1>Argument-Evidence</h1>
+</div>
+</div>
+
+
+<div id="content">
+<div id="navigation">
+	<ul>
+		<li><%= link_to "Arguments", :controller => :arguments %></li>
+		<li><%= link_to "Evidence", :controller => :evidences %></li>
+		<li><%= link_to "Visualize", :controller => :visualize %></li>
+	</ul>
+</div>
+<div id="content-main">
+	<div id="notice">
+		<% flash.each do |name, msg| %>
+			<%= content_tag :div, msg, :id => "flash_#{name}" %>
+		<% end %>
+	</div>
+
+<%= yield %>
+</div>
+</div>
+
+<div id="footer">
+</div>
+</div>
+<!-- wrapper ends -->
+</body>
+</html>

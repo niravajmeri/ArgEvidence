@@ -1,0 +1,25 @@
+<h1>Listing scheme_conclusions</h1>
+
+<table>
+  <tr>
+    <th>Scheme</th>
+    <th>Description</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @scheme_conclusions.each do |scheme_conclusion| %>
+  <tr>
+    <td><%= scheme_conclusion.scheme_id %></td>
+    <td><%= scheme_conclusion.description %></td>
+    <td><%= link_to 'Show', scheme_conclusion %></td>
+    <td><%= link_to 'Edit', edit_scheme_conclusion_path(scheme_conclusion) %></td>
+    <td><%= link_to 'Destroy', scheme_conclusion, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Scheme conclusion', new_scheme_conclusion_path %>

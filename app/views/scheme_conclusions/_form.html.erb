@@ -1,0 +1,25 @@
+<%= form_for(@scheme_conclusion) do |f| %>
+  <% if @scheme_conclusion.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@scheme_conclusion.errors.count, "error") %> prohibited this scheme_conclusion from being saved:</h2>
+
+      <ul>
+      <% @scheme_conclusion.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :scheme_id %><br />
+    <%= f.number_field :scheme_id %>
+  </div>
+  <div class="field">
+    <%= f.label :description %><br />
+    <%= f.text_area :description %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

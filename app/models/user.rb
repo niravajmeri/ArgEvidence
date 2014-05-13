@@ -1,9 +1,15 @@
 class User < ActiveRecord::Base
   #attr_accessible :email, :name, :password_hash, :password_salt, :user_id
-  attr_accessible :email, :password, :password_confirmation
 
   has_many :arguments
   has_many :evidences
+
+  has_many :project_users
+  has_many :projects, :through => :project_users
+
+  attr_accessible :email, :password, :password_confirmation, :project_users, :project_ids
+  accepts_nested_attributes_for :projects
+
   
   attr_accessor :password
   before_save :encrypt_password

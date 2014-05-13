@@ -1,0 +1,129 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+ *= require_self
+ *= require_tree .
+ */
+ 
+ html{
+	height: 100%;
+ }
+
+ body, input{
+	height: 100%;
+	font-family: verdana; 
+	margin: 0px;
+	font-size: 9pt;
+	background-color: #eeeeee;
+ }
+ 
+ h1{
+	font-size: 12pt;
+	font-weight: bold;
+ }
+ 
+ h2{
+	font-size: 12pt;
+	font-weight: normal;
+ }
+ 
+ h3{
+	font-size: 11pt;
+	font-weight: bold;
+ }
+ 
+ h4{
+	font-size: 11pt;
+	font-weight:normal;
+ }
+ 
+ h5{
+	font-size: 10pt;
+	font-weight: bold;
+ }
+ 
+ p{
+	text-align: justify;
+ }
+ 
+ a{ 
+	color: #FF0000;
+ }
+ #wrapper {
+	width: 980px;
+	min-height: 100%;
+	border-left: 1px solid #EEEEEE;
+	border-right: 1px solid #EEEEEE;
+	margin:0 auto;
+ }
+ 
+ #navigation {
+	width: 200px;
+	float: left;
+	border-right: 1px solid #EEEEEE;
+	height: 100%;
+ }
+ 
+ #header {
+	height: 65px;
+	background-color: #AAAAAA;
+ }
+ 
+ #banner {
+	border-top: 5px solid #DDDDDD;
+	background-color: #AAAAAA;
+	bottom: 0px;
+ }
+ 
+ #content {
+	/*background-color: #DDDDDD;*/
+	position: absolute;
+	top:70px;
+	bottom:20px;
+ }
+ 
+ #content-main {
+	height: 100%;
+	width: 760px;
+	margin-left: 210px;
+	border-top: 5px solid #AAAAAA;
+	background-color: #FEFEFE;
+	padding: 3px;
+ }
+ 
+ #user-nav {
+	height: 20px;
+	width: 100%;
+ }
+ 
+ #notice {
+	background-color: #FFFF66;
+	float: left;
+	width: 100%;
+	/*width: 60%;*/
+ }
+ 
+ .new-form{
+ background-color: #DDDDDD; padding: 3px; width: 98%; border-top: 5px solid blue; margin: 0 auto;
+ }
+ 
+ .edit-form{
+ background-color: #FFFF66; padding: 3px; width: 98%; border-top: 5px solid blue; margin: 0 auto;
+ }
+ 
+ .no-association{
+	font-style: italic;
+ }
+ 
+ #footer {
+	text-align: centre;
+	font-size: 8pt;
+
+ }

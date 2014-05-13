@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Scheme:</b>
+  <%= @premise.scheme_id %>
+</p>
+
+<p>
+  <b>Premise type:</b>
+  <%= @premise.premise_type_id %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @premise.description %>
+</p>
+
+
+<%= link_to 'Edit', edit_premise_path(@premise) %> |
+<%= link_to 'Back', premises_path %>

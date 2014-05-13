@@ -5,6 +5,7 @@ class EvidencesController < ApplicationController
   # GET /evidences
   # GET /evidences.json
   def index
+	session[:current_controller] = "evidences"
     @evidences = Evidence.all
 	
 	@evidence = Evidence.new

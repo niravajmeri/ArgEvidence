@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Scheme:</b>
+  <%= @scheme_conclusion.scheme_id %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @scheme_conclusion.description %>
+</p>
+
+
+<%= link_to 'Edit', edit_scheme_conclusion_path(@scheme_conclusion) %> |
+<%= link_to 'Back', scheme_conclusions_path %>

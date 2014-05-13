@@ -1,0 +1,27 @@
+<h1>Listing premises</h1>
+
+<table>
+  <tr>
+    <th>Scheme</th>
+    <th>Premise type</th>
+    <th>Description</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @premises.each do |premise| %>
+  <tr>
+    <td><%= premise.scheme_id %></td>
+    <td><%= premise.premise_type_id %></td>
+    <td><%= premise.description %></td>
+    <td><%= link_to 'Show', premise %></td>
+    <td><%= link_to 'Edit', edit_premise_path(premise) %></td>
+    <td><%= link_to 'Destroy', premise, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Premise', new_premise_path %>

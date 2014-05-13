@@ -1,11 +1,14 @@
 class ArgumentsController < ApplicationController
+  include VisualizeHelper
 
   #load_and_authorize_resource
 
   # GET /arguments
   # GET /arguments.json
   def index
-    @arguments = Argument.all
+	session[:current_controller] = "arguments"
+    #generate_graph
+	@arguments = Argument.all
 
     @argument = Argument.new
     #@users = User.all
